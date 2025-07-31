@@ -19,29 +19,30 @@
   animation: fadeIn 2s ease-in-out;
 }
 
-.genre-section, .albums-section {
+.genre-section, .albums-section, .sports-section {
   margin: 30px 0;
 }
 
-.genres, .albums {
+.genres, .albums, .sports {
   display: flex;
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
 }
 
-.genre-card {
+.genre-card, .sport-card {
   background: rgba(255, 255, 255, 0.1);
   padding: 15px 25px;
   border-radius: 10px;
   transition: transform 0.3s, box-shadow 0.3s;
   font-size: 1.1rem;
   cursor: pointer;
+  max-width: 250px;
 }
 
-.genre-card:hover {
+.genre-card:hover, .sport-card:hover {
   transform: scale(1.1);
-  box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 255, 0.2);
 }
 
 .album-card {
@@ -54,12 +55,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 0 5px rgba(255, 0, 0, 0.4);
+  box-shadow: 0 0 5px rgba(0, 0, 255, 0.4);
 }
 
 .album-card:hover {
   transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 10px 20px rgba(255, 0, 0, 0.5);
+  box-shadow: 0 10px 20px rgba(0, 0, 255, 0.5);
 }
 
 .album-image {
@@ -85,12 +86,16 @@
   color: #ccc;
 }
 
+.sport-card h4 {
+  margin-bottom: 5px;
+}
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
-.genre-card {
+.genre-card, .sport-card {
   animation: popIn 0.5s forwards ease-in;
 }
 

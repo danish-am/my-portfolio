@@ -1,39 +1,45 @@
-import React, { useEffect, useState } from 'react';
+
+import React from 'react';
 import './ProfileBanner.css';
 import PlayButton from '../components/PlayButton';
 import MoreInfoButton from '../components/MoreInfoButton';
-import { getProfileBanner } from '../queries/getProfileBanner';
-import { ProfileBanner as ProfileBannerType } from '../types';
 
-const ProfileBanner: React.FC = () => {
+// Props for background gif
+interface ProfileBannerProps {
+  backgroundGif?: string;
+}
 
-
-  const [bannerData, setBannerData] = useState<ProfileBannerType | null>(null);
-
-  useEffect(() => {
-    async function fetchData() {
-      const data = await getProfileBanner();
-      setBannerData(data);
-    }
-    fetchData();
-  }, []);
-
-  if (!bannerData) return <div>Loading...</div>;
+const ProfileBanner: React.FC<ProfileBannerProps> = ({ backgroundGif }) => {
+  // Hardcoded links
+  const resumeLink = "https://danish-resume-files.s3.us-east-2.amazonaws.com/Danish_DevOpsEngieer.docx"; // <-- replace with actual resume URL
+  const linkedinLink = "https://www.linkedin.com/in/danish-am/";
 
   const handlePlayClick = () => {
-    window.open(bannerData.resumeLink.url, '_blank');
+    window.open(resumeLink, "_blank");
   };
 
-  const handleLinkedinClick = () => { 
-    window.open(bannerData.linkedinLink, '_blank');
-  }
+  const handleLinkedinClick = () => {
+    window.open(linkedinLink, "_blank");
+  };
 
   return (
-    <div className="profile-banner">
+    <div
+      className="profile-banner"
+      style={{
+        backgroundImage: `url(${backgroundGif || ''})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center',
+      }}
+    >
       <div className="banner-content">
-        <h1 className="banner-headline" id='headline'>{bannerData.headline}</h1>
+        <h1 className="banner-headline" id="headline">
+          Danish M - DevOps Engineer | Multi-Cloud -AWS & Azure | SRE
+        </h1>
         <p className="banner-description">
-          {bannerData.profileSummary}
+          Highly skilled and results-driven DevOps Engineer with 5+ years of experience
+          in AWS, Azure, Kubernetes, Docker, Terraform, CI/CD, and Site Reliability Engineering.
+          Adept at building scalable infrastructure, automating deployments, and optimizing
+          cloud costs while ensuring high availability and security.
         </p>
 
         <div className="banner-buttons">

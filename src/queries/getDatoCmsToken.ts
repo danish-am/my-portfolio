@@ -1,7 +1,11 @@
-// getDatoCmsToken.ts
-
 export const getDatoCmsToken = (): string => {
   const hostname = window.location.hostname;
+
+  // Handle ngrok tunnels like localhost
+  if (hostname.includes('ngrok-free.app')) {
+    // If you want to use the same token as localhost
+    return '41c30f33cba9ff368371a8f58802fd';
+  }
 
   switch (hostname) {
     case 'ror.sumanthsamala.com':

@@ -1,38 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './ContactMe.css';
-import profilePic from '../images/sumanth.jpeg';
+import profilePic from '../images/danish.jpeg'; // Replace with your picture
 import { FaEnvelope, FaPhoneAlt, FaCoffee, FaLinkedin } from 'react-icons/fa';
-import { ContactMe as IContactMe } from '../types';
-import { getContactMe } from '../queries/getContactMe';
 
 const ContactMe: React.FC = () => {
-
-  const [userData, setUserData] = useState<IContactMe>()
-
-  useEffect(() => {
-    async function fetchUserData() {
-      const data = await getContactMe();
-      setUserData(data);
-    }
-
-    fetchUserData();
-  }, []);
-
-  if (!userData) return <div>Loading...</div>;
-
   return (
     <div className="contact-container">
       <div className="linkedin-badge-custom">
-        <img src={profilePic} alt="Sumanth Samala" className="badge-avatar" />
+        <img src={profilePic} alt="Danish Ahmed Mohammed" className="badge-avatar" />
         <div className="badge-content">
-          <h3 className="badge-name">{userData?.name}</h3>
-          <p className="badge-title">{userData.title}</p>
+          <h3 className="badge-name">Danish Ahmed Mohammed</h3>
+          <p className="badge-title">DevOps Engineer | Cloud Engineer | SRE</p>
           <p className="badge-description">
-            {userData.summary}
+            With 5+ years of experience in AWS, Azure, Kubernetes, Docker, Terraform,
+            and CI/CD pipelines. Skilled in automation, cloud security, and 
+            infrastructure scaling.
           </p>
-          <p className="badge-company">{userData.companyUniversity}</p>
+          <p className="badge-company">Toronto, Canada</p>
           <a
-            href={userData.linkedinLink}
+            href="https://www.linkedin.com/in/danish-am/"
             target="_blank"
             rel="noopener noreferrer"
             className="badge-link"
@@ -41,20 +27,22 @@ const ContactMe: React.FC = () => {
           </a>
         </div>
       </div>
+
       <div className="contact-header">
         <p>I'm always up for a chat or a coffee! Feel free to reach out.</p>
       </div>
+
       <div className="contact-details">
         <div className="contact-item">
           <FaEnvelope className="contact-icon" />
-          <a href={`mailto:${userData.email}`} className="contact-link">
-            {userData.email}
+          <a href="mailto:danishahmedm884@gmail.com" className="contact-link">
+            danishahmedm884@gmail.com
           </a>
         </div>
         <div className="contact-item">
           <FaPhoneAlt className="contact-icon" />
-          <a href={`tel:${userData.phoneNumber}`} className="contact-link">
-            {userData.phoneNumber}
+          <a href="tel: +1 (226) 829-6067" className="contact-link">
+             +1 (226) 829-6067
           </a>
         </div>
         <div className="contact-fun">
