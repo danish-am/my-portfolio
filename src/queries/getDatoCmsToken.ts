@@ -7,6 +7,11 @@ export const getDatoCmsToken = (): string => {
   }
 
   switch (hostname) {
+    // Add your domains here
+    case 'danisham.com':
+    case 'www.danisham.com':
+      return '41c30f33cba9ff368371a8f58802fd';
+
     case 'ror.sumanthsamala.com':
     case 'sumanthsamala.com':
     case 'ror.localhost':
