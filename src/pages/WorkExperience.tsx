@@ -11,20 +11,20 @@ const WorkExperience: React.FC = () => {
     {
       timelineType: "work",
       dateRange: "Jun 2024 – Present",
-      title: "DevOps Infrastructure Engineer",
-      name: "Morgan Stanley – Canada",
-      techStack: "Azure, Terraform, AKS, Docker, Azure DevOps, GitHub Actions, Jenkins, SonarQube, ARM Templates",
+      title: "AWS/AZURE Cloud Engineer",
+      name: "Broadridge – Canada",
+      techStack: "AWS, Azure, Terraform, Cloud Custodian, IAM, CloudFormation, Jenkins, Azure DevOps, CloudWatch, Azure Monitor",
       summaryPoints:
-        "Designed and implemented highly available Azure cloud infrastructure with Terraform and ARM Templates. Automated CI/CD pipelines using Azure DevOps, GitHub Actions, and Jenkins, reducing deployment times by 60%. Migrated on-premise workloads to Azure, implemented AKS for container orchestration, and improved scalability and reliability with proactive monitoring (Azure Monitor, Log Analytics) and integrated security controls."
+        "Managed and provisioned multi-cloud infrastructure across AWS (EC2, RDS, S3, VPC) and Azure (Virtual Machines, Storage, Virtual Networks) with Terraform, ARM Templates, and CloudFormation. Implemented automated governance, compliance rules, and resource tagging using Cloud Custodian. Enforced strict security, least-privilege access, and identity management with AWS IAM and Azure RBAC / Entra ID. Designed robust CI/CD pipelines and optimized multi-cloud resource scaling and cost governance."
     },
     {
       timelineType: "work",
       dateRange: "Apr 2022 – Aug 2023",
-      title: "Cloud Engineer",
+      title: "DevOps Engineer",
       name: "TCS – India",
-      techStack: "AWS, Terraform, CloudFormation, Jenkins, GitLab, CodePipeline, CloudWatch, IAM",
+      techStack: "Azure, Terraform, AKS, Docker, Azure DevOps, GitHub Actions, Jenkins, SonarQube, ARM Templates",
       summaryPoints:
-        "Managed large-scale AWS infrastructure using EC2, RDS, S3, and VPC. Automated deployments and IaC with Terraform and CloudFormation, reducing manual interventions. Designed CI/CD pipelines with Jenkins, CodePipeline, and GitLab, improving release frequency. Optimized AWS usage by implementing auto-scaling and cost-reduction strategies, while maintaining strict security policies using IAM and Shield."
+        "Designed and implemented highly available cloud infrastructure with Terraform and ARM Templates. Automated CI/CD pipelines using Azure DevOps, GitHub Actions, and Jenkins, reducing deployment times by 60%. Migrated on-premise workloads to cloud environments, implemented AKS for container orchestration, and improved scalability and reliability with proactive monitoring (Azure Monitor, Log Analytics) and integrated security controls."
     },
     {
       timelineType: "work",
@@ -34,6 +34,13 @@ const WorkExperience: React.FC = () => {
       techStack: "Linux (RHEL, CentOS), AWS, Azure, Terraform, Prometheus, Grafana, CloudWatch, Ansible",
       summaryPoints:
         "Administered and optimized Linux servers in hybrid cloud environments. Automated server provisioning and monitoring using Terraform, CloudFormation, and Prometheus/Grafana, reducing downtime and manual workload. Created Ansible playbooks and shell scripts to enforce security policies and optimize server performance."
+    },
+    {
+      timelineType: "education",
+      dateRange: "May 2024 – Dec 2024",
+      name: "Durham College – Canada",
+      title: "Post Graduate Certificate in Data Analytics",
+      summaryPoints: "Focused on cloud-based data pipelines, big data architectures, and scalable analytics solutions using AWS and Azure data services."
     },
     {
       timelineType: "education",
@@ -81,19 +88,74 @@ const WorkExperience: React.FC = () => {
             }
             icon={item.timelineType === "work" ? <WorkIcon /> : <SchoolIcon />}
           >
-            <div style={{ color: 'black' }}>
+            <div>
               {item.timelineType === "work" ? (
                 <>
-                  <h3 className="vertical-timeline-element-title">{item.title}</h3>
-                  <h4 className="vertical-timeline-element-subtitle">{item.name}</h4>
-                  <p className="vertical-timeline-element-tech">🔧 {item.techStack}</p>
-                  <p>{item.summaryPoints}</p>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px' }}>
+                    <h3 className="vertical-timeline-element-title" style={{ margin: 0, fontWeight: 700, fontSize: '1.25rem' }}>
+                      {item.title}
+                    </h3>
+                    <span style={{
+                      fontSize: '0.75rem',
+                      fontWeight: 600,
+                      padding: '3px 10px',
+                      borderRadius: '12px',
+                      background: index === 0 ? 'rgba(255,255,255,0.25)' : '#e2e8f0',
+                      color: index === 0 ? '#fff' : '#334155'
+                    }}>
+                      Full-time
+                    </span>
+                  </div>
+                  <h4 className="vertical-timeline-element-subtitle" style={{ margin: '4px 0 12px 0', opacity: 0.9, fontWeight: 600 }}>
+                    🏢 {item.name}
+                  </h4>
+                  {item.techStack && (
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', margin: '10px 0 14px 0' }}>
+                      {item.techStack.split(', ').map((tech, i) => (
+                        <span
+                          key={i}
+                          style={{
+                            fontSize: '0.75rem',
+                            fontWeight: 500,
+                            padding: '3px 8px',
+                            borderRadius: '6px',
+                            background: index === 0 ? 'rgba(255,255,255,0.2)' : '#e0e7ff',
+                            color: index === 0 ? '#fff' : '#1e40af',
+                            letterSpacing: '0.2px'
+                          }}
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                  <p style={{ lineHeight: 1.6, fontSize: '0.92rem', margin: 0, opacity: index === 0 ? 0.95 : 0.85 }}>
+                    {item.summaryPoints}
+                  </p>
                 </>
               ) : (
                 <>
-                  <h3 className="vertical-timeline-element-title">{item.name}</h3>
-                  <h4 className="vertical-timeline-element-subtitle">{item.title}</h4>
-                  <p>{item.summaryPoints}</p>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px' }}>
+                    <h3 className="vertical-timeline-element-title" style={{ margin: 0, fontWeight: 700, fontSize: '1.15rem' }}>
+                      🎓 {item.name}
+                    </h3>
+                    <span style={{
+                      fontSize: '0.75rem',
+                      fontWeight: 600,
+                      padding: '3px 10px',
+                      borderRadius: '12px',
+                      background: 'rgba(219, 39, 119, 0.15)',
+                      color: '#be185d'
+                    }}>
+                      Education
+                    </span>
+                  </div>
+                  <h4 className="vertical-timeline-element-subtitle" style={{ margin: '6px 0 10px 0', fontWeight: 600, color: '#475569' }}>
+                    {item.title}
+                  </h4>
+                  <p style={{ lineHeight: 1.6, fontSize: '0.92rem', margin: 0, color: '#334155' }}>
+                    {item.summaryPoints}
+                  </p>
                 </>
               )}
             </div>
