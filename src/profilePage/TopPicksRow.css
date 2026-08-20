@@ -1,97 +1,135 @@
 .top-picks-row {
-  margin: 20px 0;
-  padding: 10px 20px
+  margin: 20px 0 40px;
+  padding: 10px 4%;
 }
 
 .row-title {
-  font-size: 2rem;
-  color: #fff;
-  margin-bottom: 20px;
-  animation: fadeIn 1s ease-in-out;
+  font-size: 1.5vw;
+  font-weight: bold;
+  color: #e5e5e5;
+  margin-bottom: 0.5vw;
+  min-width: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .row-title {
+    font-size: 1.2rem;
+  }
 }
 
 .card-row {
   display: flex;
   gap: 15px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 20px 10px;
+  margin: -20px -10px; 
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
-.pick-card {
+.card-row::-webkit-scrollbar {
+  display: none;
+}
+
+.cinematic-card {
   position: relative;
   width: 250px;
-  height: 200px;
-  border-radius: 8px;
-  overflow: hidden;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: slideIn 0.5s ease forwards;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+  transform: translateZ(0); /* Hardware acceleration */
+  backface-visibility: hidden;
+  z-index: 1;
 }
 
-.pick-card:hover {
-  transform: scale(1.05);
-  cursor: pointer;
-  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.5); /* Netflix red glow on hover */
+.cinematic-card:hover {
+  transform: scale(1.05) translateZ(0);
+  z-index: 10;
+}
+
+/* Image takes up the top block */
+.card-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 140px; 
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
 }
 
 .pick-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
 }
 
-.pick-card:hover .pick-image {
-  transform: scale(1.1);
-}
-
-.overlay {
+.card-gradient {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
 }
 
-.pick-card:hover .overlay {
-  opacity: 1;
-}
-
-.pick-label {
+.title-fallback {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
   color: #fff;
+  font-weight: 700;
   font-size: 1.2rem;
-  font-weight: bold;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+  z-index: 2;
 }
 
-.pick-label:hover {
- color: rgb(153, 80, 80);
+/* Details statically below the image */
+.card-details-static {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 2px;
 }
 
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.card-metadata {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
 }
 
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+.match-score {
+  color: #46d369; /* Netflix green */
+}
+
+.maturity-rating {
+  border: 1px solid rgba(255,255,255,0.4);
+  padding: 0 4px;
+  color: #e5e5e5;
+  font-size: 0.7rem;
+}
+
+.season-info {
+  color: #e5e5e5;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: #a3a3a3;
+}
+
+.dot {
+  color: #666;
+  font-size: 0.8rem;
 }
