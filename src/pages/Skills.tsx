@@ -1,7 +1,7 @@
 import React from 'react';
 import './Skills.css';
 import { FaAws, FaDocker, FaJenkins, FaPython, FaGithub, FaMicrosoft } from 'react-icons/fa';
-import { SiKubernetes, SiTerraform, SiPrometheus, SiGrafana, SiAnsible, SiAzuredevops, SiGitlab } from 'react-icons/si';
+import { SiKubernetes, SiTerraform, SiPrometheus, SiAnsible } from 'react-icons/si';
 
 const skills = [
   {

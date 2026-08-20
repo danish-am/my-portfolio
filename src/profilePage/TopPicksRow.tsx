@@ -2,7 +2,6 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import './TopPicksRow.css';
-import { FaPlay, FaPlus, FaChevronDown } from 'react-icons/fa';
 
 type ProfileType = 'recruiter' | 'developer' | 'stalker' | 'adventure';
 
