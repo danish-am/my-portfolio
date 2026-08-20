@@ -35,14 +35,14 @@ const ContactMe: React.FC = () => {
       <div className="contact-details">
         <div className="contact-item">
           <FaEnvelope className="contact-icon" />
-          <a href="mailto:danishahmedm884@gmail.com" className="contact-link">
-            danishahmedm884@gmail.com
+          <a href="mailto:danish.ahmedm7@gmail.com" className="contact-link">
+            danish.ahmedm7@gmail.com
           </a>
         </div>
         <div className="contact-item">
           <FaPhoneAlt className="contact-icon" />
-          <a href="tel: +1 (226) 829-6067" className="contact-link">
-             +1 (226) 829-6067
+          <a href="tel: +1 (437) 662-0448" className="contact-link">
+             +1 (437) 662-0448
           </a>
         </div>
         <div className="contact-fun">
