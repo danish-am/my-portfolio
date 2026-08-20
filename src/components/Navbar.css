@@ -72,6 +72,13 @@
   color: #e50914; /* Netflix red */
 }
 
+.navbar-links li a.active-nav-link {
+  color: #fff;
+  font-weight: 700;
+  border-bottom: 2px solid #e50914;
+  padding-bottom: 4px;
+}
+
 /* Profile Icon */
 .profile-icon {
   width: 30px;
@@ -193,4 +200,72 @@
     font-size: 1.5rem;
     margin-right: 5px;
   }
+}
+
+/* New Logo styles replacing the SVG curve */
+.navbar-logo-text {
+  color: #E50914; /* Netflix red */
+  font-size: 2rem;
+  font-weight: 900;
+  text-decoration: none;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-right: 30px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-logo {
+  color: #E50914;
+  font-size: 2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Desktop Social Links */
+.social-links-desktop {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-right: 25px;
+}
+
+.social-links-desktop a {
+  color: #fff;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+}
+
+.social-links-desktop a:hover {
+  color: #e50914; /* Netflix red */
+}
+
+@media (max-width: 768px) {
+  .social-links-desktop {
+    display: none; /* Hide on mobile to keep navbar clean, maybe add to sidebar if needed */
+  }
+}
+
+.sidebar-socials {
+  margin-top: 20px;
+  display: flex !important;
+  justify-content: center;
+  gap: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 20px !important;
+}
+
+.sidebar-socials a {
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.sidebar-socials a:hover {
+  color: #e50914;
 }
