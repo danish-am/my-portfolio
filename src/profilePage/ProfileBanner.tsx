@@ -1,4 +1,3 @@
-
 import React from 'react';
 import './ProfileBanner.css';
 import PlayButton from '../components/PlayButton';
@@ -10,12 +9,24 @@ interface ProfileBannerProps {
 }
 
 const ProfileBanner: React.FC<ProfileBannerProps> = ({ backgroundGif }) => {
-  // Hardcoded links
-  const resumeLink = "https://danish-resume-files.s3.us-east-2.amazonaws.com/Danish_DevOpsEngieer.docx"; // <-- replace with actual resume URL
   const linkedinLink = "https://www.linkedin.com/in/danish-am/";
 
+  /* 
+  ========================================================================
+  TODO: WHEN RESUME IS UPLOADED TO S3, UNCOMMENT THIS BLOCK 
+  AND DELETE THE `handlePlayClick` FUNCTION BELOW IT.
+  
+  const resumeLink = "https://danish-resume-files.s3.us-east-2.amazonaws.com/Danish_DevOpsEngieer.docx"; //
+  
   const handlePlayClick = () => {
     window.open(resumeLink, "_blank");
+  };
+  ========================================================================
+  */
+
+  // Currently pointing "Resume" to LinkedIn until the S3 resume is ready
+  const handlePlayClick = () => {
+    window.open(linkedinLink, "_blank");
   };
 
   const handleLinkedinClick = () => {
@@ -36,12 +47,8 @@ const ProfileBanner: React.FC<ProfileBannerProps> = ({ backgroundGif }) => {
           Danish M - DevOps Engineer | Multi-Cloud -AWS & Azure | SRE
         </h1>
         <p className="banner-description">
-          Highly skilled and results-driven DevOps Engineer with 5+ years of experience
-          in AWS, Azure, Kubernetes, Docker, Terraform, CI/CD, and Site Reliability Engineering.
-          Adept at building scalable infrastructure, automating deployments, and optimizing
-          cloud costs while ensuring high availability and security.
+          Highly skilled and results-driven DevOps Engineer with 5+ years of experience in AWS, Azure, Kubernetes, Docker, Terraform, CI/CD, and Site Reliability Engineering. Adept at building scalable infrastructure, automating deployments, and optimizing cloud costs while ensuring high availability and security.
         </p>
-
         <div className="banner-buttons">
           <PlayButton onClick={handlePlayClick} label="Resume" />
           <MoreInfoButton onClick={handleLinkedinClick} label="Linkedin" />
