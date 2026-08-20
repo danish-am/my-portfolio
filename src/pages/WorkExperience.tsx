@@ -10,7 +10,7 @@ const WorkExperience: React.FC = () => {
   const timelineData = [
     {
       timelineType: "work",
-      dateRange: "Jun 2024 – Present",
+      dateRange: "Oct 2025 – Present",
       title: "AWS/AZURE Cloud Engineer",
       name: "Broadridge – Canada",
       techStack: "AWS, Azure, Terraform, Cloud Custodian, IAM, CloudFormation, Jenkins, Azure DevOps, CloudWatch, Azure Monitor",
