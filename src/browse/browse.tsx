@@ -8,24 +8,26 @@ import './browse.css';
 const Browse: React.FC = () => {
   const navigate = useNavigate();
 
-  // Updated profile name to Cloud/DevOps Engineer
+  // Updated names and added safe URL slugs
   const profiles = [
     {
-      name: "recruiter",
+      name: "Recruiter",
+      urlSlug: "recruiter",
       image: blueImage,
       backgroundGif:
         "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTZ5eWwwbjRpdWM1amxyd3VueHhteTVzajVjeGZtZGJ1dDc4MXMyNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9dg/16u7Ifl2T4zYfQ932F/giphy.gif"
     },
     {
       name: "Cloud/DevOps Engineer",
+      urlSlug: "developer",
       image: greyImage,
       backgroundGif:
         "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGNidDl5emZpejY2eGFxa2I4NW0zZGNpbWRlbnBrZ3N2dWhhbzM1MyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TFPdmm3rdzeZ0kP3zG/giphy.gif"
     }
   ];
 
-  const handleProfileClick = (profile: { name: string; image: string; backgroundGif: string }) => {
-    navigate(`/profile/${profile.name}`, {
+  const handleProfileClick = (profile: { name: string; urlSlug: string; image: string; backgroundGif: string }) => {
+    navigate(`/profile/${profile.urlSlug}`, {
       state: { profileImage: profile.image, backgroundGif: profile.backgroundGif }
     });
   };
@@ -39,7 +41,7 @@ const Browse: React.FC = () => {
             key={index}
             name={profile.name}
             image={profile.image}
-            onClick={() => handleProfileClick(profile)}
+            onClick={() => handleProfileClick(profile as any)}
           />
         ))}
       </div>
