@@ -1,6 +1,6 @@
 import React from 'react';
 import './ContactMe.css';
-import profilePic from '../images/danish.jpeg'; // Replace with your picture
+import profilePic from '../images/danish.jpg'; // Replace with your picture
 import { FaEnvelope, FaPhoneAlt, FaCoffee, FaLinkedin } from 'react-icons/fa';
 
 const ContactMe: React.FC = () => {
