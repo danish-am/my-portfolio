@@ -1,0 +1,94 @@
+.poster {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.poster-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.28), transparent 55%);
+  z-index: 0;
+}
+
+.poster-icon {
+  position: absolute;
+  right: -14px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-12deg);
+  font-size: 128px;
+  line-height: 0;
+  color: rgba(255, 255, 255, 0.22);
+  transition: transform 0.4s ease, color 0.4s ease;
+  z-index: 0;
+}
+
+.cinematic-card:hover .poster-icon {
+  transform: translateY(-50%) rotate(-4deg) scale(1.08);
+  color: rgba(255, 255, 255, 0.32);
+}
+
+.poster-n {
+  position: absolute;
+  top: 6px;
+  left: 9px;
+  font-family: 'Bebas Neue', 'Arial Black', Impact, sans-serif;
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: #e50914;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+.poster-shade {
+  position: absolute;
+  inset: 45% 0 0 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+  z-index: 1;
+}
+
+.poster-title {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 10px;
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 1.05;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+  z-index: 2;
+}
+
+/* Netflix "TOP 10" corner badge */
+.top10-badge {
+  position: absolute;
+  top: 0;
+  right: 8px;
+  width: 30px;
+  padding: 3px 0 4px;
+  background: #e50914;
+  border-radius: 0 0 2px 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+  color: #fff;
+  font-weight: 900;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  z-index: 3;
+}
+
+.top10-top {
+  font-size: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+.top10-num {
+  font-size: 0.95rem;
+}

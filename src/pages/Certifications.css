@@ -102,3 +102,24 @@
   from { opacity: 0; transform: translateY(50px) rotate(-2deg) scale(0.95); }
   to { opacity: 1; transform: translateY(0) rotate(0deg) scale(1); }
 }
+
+.awards-trophy {
+  color: #d4a017;
+  vertical-align: -4px;
+  margin-right: 6px;
+}
+
+.verify-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+  margin-top: 0.75rem;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #46d369;
+  background: rgba(70, 211, 105, 0.12);
+  border: 1px solid rgba(70, 211, 105, 0.35);
+}
