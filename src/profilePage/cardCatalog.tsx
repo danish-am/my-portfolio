@@ -13,8 +13,12 @@ import { PosterTheme } from '../components/Poster';
 
 export type ProfileType = 'recruiter' | 'developer' | 'stalker' | 'adventure';
 
+const unsplash = (id: string) =>
+  `https://images.unsplash.com/${id}?q=80&w=600&auto=format&fit=crop`;
+
 export interface CatalogCard {
   title: string;
+  image: string;
   route: string;
   icon: React.ReactNode;
   theme: PosterTheme;
@@ -27,6 +31,7 @@ export interface CatalogCard {
 
 export const cards: Record<string, CatalogCard> = {
   permit: {
+    image: unsplash('photo-1454165804606-c3d57bc86b40'),
     title: 'Work Permit',
     route: '/work-permit',
     icon: <FaMapMarkedAlt />,
@@ -36,6 +41,7 @@ export const cards: Record<string, CatalogCard> = {
     tags: ['Verified', 'Canada'],
   },
   skills: {
+    image: unsplash('photo-1555066931-4365d14bab8c'),
     title: 'Skills',
     route: '/skills',
     icon: <FaCode />,
@@ -45,6 +51,7 @@ export const cards: Record<string, CatalogCard> = {
     tags: ['AWS', 'Azure', 'IaC'],
   },
   experience: {
+    image: unsplash('photo-1558494949-ef010cbdcc31'),
     title: 'Experience',
     route: '/work-experience',
     icon: <MdWork />,
@@ -54,6 +61,7 @@ export const cards: Record<string, CatalogCard> = {
     tags: ['SRE', 'Cloud', '5+ Yrs'],
   },
   certifications: {
+    image: unsplash('photo-1667372393119-3d4c48d07fc9'),
     title: 'Certifications',
     route: '/certifications',
     icon: <FaAward />,
@@ -64,6 +72,7 @@ export const cards: Record<string, CatalogCard> = {
     progress: 80,
   },
   projects: {
+    image: unsplash('photo-1605745341112-85968b19335b'),
     title: 'Projects',
     route: '/projects',
     icon: <FaRocket />,
@@ -74,6 +83,7 @@ export const cards: Record<string, CatalogCard> = {
     top10: true,
   },
   contact: {
+    image: unsplash('photo-1512428559087-560fa5ceab42'),
     title: 'Contact Me',
     route: '/contact-me',
     icon: <FaEnvelope />,
@@ -84,6 +94,7 @@ export const cards: Record<string, CatalogCard> = {
     progress: 35,
   },
   music: {
+    image: unsplash('photo-1579952363873-27f3bade9f55'),
     title: 'Music & Sports',
     route: '/music-and-sports',
     icon: <FaMusic />,
@@ -94,6 +105,7 @@ export const cards: Record<string, CatalogCard> = {
     progress: 65,
   },
   blogs: {
+    image: unsplash('photo-1499750310107-5fef28a66643'),
     title: 'Blogs',
     route: '/blogs',
     icon: <FaPenNib />,

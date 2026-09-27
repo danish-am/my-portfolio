@@ -28,7 +28,7 @@ const ContinueWatching: React.FC<ContinueWatchingProps> = ({ profile, customTitl
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
             <div className="card-image-wrapper">
-              <Poster title={pick.title} icon={pick.icon} theme={pick.theme} top10={pick.top10} />
+              <Poster title={pick.title} image={pick.image} icon={pick.icon} theme={pick.theme} top10={pick.top10} />
               <div className="progress-bar-container">
                 <div className="progress-bar-fill" style={{ width: `${pick.progress ?? 50}%` }}></div>
               </div>
