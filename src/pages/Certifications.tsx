@@ -1,6 +1,6 @@
 import React from 'react';
 import './Certifications.css';
-import { FaExternalLinkAlt, FaUniversity } from 'react-icons/fa';
+import { FaCheckCircle, FaExternalLinkAlt, FaTrophy, FaUniversity } from 'react-icons/fa';
 import {
   SiCoursera,
   SiMicrosoft,
@@ -70,9 +70,20 @@ const certifications = [
   }
 ];
 
+// Name the site that verifies each credential, based on its link
+const verifierFor = (link: string): string => {
+  if (link.includes('credly.com')) return 'Credly';
+  if (link.includes('learn.microsoft.com')) return 'Microsoft Learn';
+  if (link.includes('coursera.org')) return 'Coursera';
+  return 'issuer';
+};
+
 const Certifications: React.FC = () => {
   return (
     <div className="certifications-container">
+      <h2 className="certifications-title">
+        <FaTrophy className="awards-trophy" /> Awards &amp; Certifications
+      </h2>
       <div className="certifications-grid">
         {certifications.map((cert, index) => (
           <a
@@ -81,6 +92,7 @@ const Certifications: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="certification-card"
+            style={{ '--delay': `${index * 0.08}s` } as React.CSSProperties}
           >
             <div className="certification-content">
               <div className="certification-icon">{cert.icon || <FaUniversity />}</div>
@@ -89,6 +101,9 @@ const Certifications: React.FC = () => {
               {cert.issuedDate && (
                 <span className="issued-date">{cert.issuedDate}</span>
               )}
+              <span className="verify-chip">
+                <FaCheckCircle /> Verify on {verifierFor(cert.link)}
+              </span>
             </div>
             <div className="certification-link animated-icon">
               <FaExternalLinkAlt />
