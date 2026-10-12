@@ -10,7 +10,7 @@ const ContactMe: React.FC = () => {
         <img src={profilePic} alt="Danish Ahmed Mohammed" className="badge-avatar" />
         <div className="badge-content">
           <h3 className="badge-name">Danish Ahmed Mohammed</h3>
-          <p className="badge-title">Cloud Platform Engineer | DevOps | AIOps & MLOps</p>
+          <p className="badge-title">Cloud Platform Engineer | DevOps | SRE | AIOps & MLOps</p>
           <p className="badge-description">
             With 5+ years of experience in AWS, Azure, Kubernetes, Docker, Terraform,
             and CI/CD pipelines. Skilled in automation, cloud security, and 
