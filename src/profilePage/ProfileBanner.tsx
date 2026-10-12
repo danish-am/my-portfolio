@@ -11,22 +11,16 @@ interface ProfileBannerProps {
 const ProfileBanner: React.FC<ProfileBannerProps> = ({ backgroundGif }) => {
   const linkedinLink = "https://www.linkedin.com/in/danish-am/";
 
-  /* 
-  ========================================================================
-  TODO: WHEN RESUME IS UPLOADED TO S3, UNCOMMENT THIS BLOCK 
-  AND DELETE THE `handlePlayClick` FUNCTION BELOW IT.
-  
-  const resumeLink = "https://danish-resume-files.s3.us-east-2.amazonaws.com/Danish_DevOpsEngieer.docx"; //
-  
-  const handlePlayClick = () => {
-    window.open(resumeLink, "_blank");
-  };
-  ========================================================================
-  */
+  const resumeFile = 'Danish_Mohammed_Cloud_DevOps_Engineer_Resume.pdf';
 
-  // Currently pointing "Resume" to LinkedIn until the S3 resume is ready
+  // Download the resume PDF stored in /public
   const handlePlayClick = () => {
-    window.open(linkedinLink, "_blank");
+    const link = document.createElement('a');
+    link.href = `${process.env.PUBLIC_URL}/${resumeFile}`;
+    link.download = resumeFile;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const handleLinkedinClick = () => {
@@ -44,10 +38,10 @@ const ProfileBanner: React.FC<ProfileBannerProps> = ({ backgroundGif }) => {
     >
       <div className="banner-content">
         <h1 className="banner-headline" id="headline">
-          Danish M - DevOps Engineer | Multi-Cloud -AWS & Azure | SRE
+          Danish M - Cloud Platform Engineer | AWS & Azure | DevOps | AIOps & MLOps
         </h1>
         <p className="banner-description">
-          Highly skilled and results-driven DevOps Engineer with 5+ years of experience in AWS, Azure, Kubernetes, Docker, Terraform, CI/CD, and Site Reliability Engineering. Adept at building scalable infrastructure, automating deployments, and optimizing cloud costs while ensuring high availability and security.
+          Cloud Platform Engineer with 5+ years of experience building and running multi-account platforms on AWS and Azure. Hands-on with Kubernetes (EKS/AKS), Docker, Terraform, CloudFormation and CI/CD, with a focus on reliability, security and cost. Now bringing AIOps and MLOps practices to the platform: automated monitoring and incident response, and pipelines to deploy and operate ML models in production.
         </p>
         <div className="banner-buttons">
           <PlayButton onClick={handlePlayClick} label="Resume" />
